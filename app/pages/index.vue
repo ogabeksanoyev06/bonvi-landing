@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<HeroSection />
 		<WhySection />
 		<FaqSection />
 	</div>
@@ -8,6 +9,7 @@
 <script setup>
 import WhySection from '~/components/sections/why/WhySection.vue'
 import FaqSection from '~/components/sections/faq/FaqSection.vue'
+import HeroSection from '~/components/sections/hero/HeroSection.vue'
 
 const { scrollToSection } = useNavigation()
 

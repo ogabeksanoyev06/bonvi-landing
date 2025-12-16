@@ -2,13 +2,11 @@
 	<footer class="md:container pt-12 md:pb-12">
 		<div class="bg-[#E2EEF9] md:rounded-[48px] overflow-hidden relative z-10">
 			<NuxtImg src="/images/footer-bg.webp" alt="checkflower icon" class="absolute left-0 bottom-[-67px] h-[350px] min-w-[1360px] z-[-1]" />
-			<div class="flex justify-between py-8 px-12">
-				<div class="flex flex-col space-y-10 pt-6">
-					<div class="flex-shrink-0">
-						<NuxtLinkLocale to="/" class="flex items-center">
-							<NuxtImg class="h-10 lg:h-16" src="/images/footer-bonvi-logo.svg" alt="bonvi logo" />
-						</NuxtLinkLocale>
-					</div>
+			<div class="hidden min-[1220px]:flex justify-between gap-5 py-8 px-12">
+				<div class="flex flex-col gap-10 pt-6">
+					<NuxtLinkLocale to="/" class="flex items-center shrink-0">
+						<NuxtImg class="h-10 lg:h-16" src="/images/footer-bonvi-logo.svg" alt="bonvi logo" />
+					</NuxtLinkLocale>
 					<div class="flex space-x-2.5">
 						<a
 							href="https://instagram.com/USERNAME"
@@ -99,6 +97,114 @@
 						</div>
 						<div class="bg-white border-2 py-4 px-5 w-[160px] rounded-xl">
 							<NuxtImg src="/images/google-play.svg" class="w-full h-full" alt="App Store" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="max-[1220px]:flex flex-col items-center hidden py-6 px-5">
+				<NuxtLinkLocale to="/" class="flex items-center shrink-0">
+					<NuxtImg class="h-10 lg:h-16 mb-6" src="/images/footer-bonvi-logo.svg" alt="bonvi logo" />
+				</NuxtLinkLocale>
+
+				<!-- Social Media Icons -->
+				<div class="flex justify-center items-center gap-3 mb-6 w-full">
+					<a
+						href="https://instagram.com/USERNAME"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="size-8 flex items-center justify-center p-[5px] rounded-full bg-gradient-to-b from-[#0083FF] to-[#001D88] hover:scale-110 transition-300"
+					>
+						<NuxtImg src="/images/instagram-icon.svg" alt="Instagram" class="size-5 aspect-square" />
+					</a>
+
+					<a
+						href="https://t.me/USERNAME"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="size-8 flex items-center justify-center p-[5px] rounded-full bg-gradient-to-b from-[#0083FF] to-[#001D88] hover:scale-110 transition-300"
+					>
+						<NuxtImg src="/images/telegram-icon.svg" alt="Telegram" class="size-5 aspect-square" />
+					</a>
+
+					<a
+						href="https://facebook.com/USERNAME"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="size-8 flex items-center justify-center p-[5px] rounded-full bg-gradient-to-b from-[#0083FF] to-[#001D88] hover:scale-110 transition-300"
+					>
+						<NuxtImg src="/images/facebook-icon.svg" alt="Facebook" class="size-5 aspect-square" />
+					</a>
+
+					<a
+						href="https://x.com/USERNAME"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="size-8 flex items-center justify-center p-[5px] rounded-full bg-gradient-to-b from-[#0083FF] to-[#001D88] hover:scale-110 transition-300"
+					>
+						<NuxtImg src="/images/x-icon.svg" alt="X (Twitter)" class="size-5 aspect-square" />
+					</a>
+				</div>
+
+				<!-- Navigation Menu -->
+				<div class="mb-6 w-full">
+					<div class="grid grid-cols-1 gap-2 max-w-sm mx-auto">
+						<button
+							class="flex items-center justify-center py-3 px-4 bg-white/40 backdrop-blur-sm rounded-xl font-medium text-gray-800 hover:bg-white/60 hover:text-[#12C09E] active:bg-white/70 transition-all duration-200 min-h-[44px]"
+							@click="handleNavigation('functions')"
+						>
+							{{ $t('products') }}
+						</button>
+						<button
+							class="flex items-center justify-center py-3 px-4 bg-white/40 backdrop-blur-sm rounded-xl font-medium text-gray-800 hover:bg-white/60 hover:text-[#12C09E] active:bg-white/70 transition-all duration-200 min-h-[44px]"
+							@click="handleNavigation('benefits')"
+						>
+							{{ $t('advantages') }}
+						</button>
+						<button
+							class="flex items-center justify-center py-3 px-4 bg-white/40 backdrop-blur-sm rounded-xl font-medium text-gray-800 hover:bg-white/60 hover:text-[#12C09E] active:bg-white/70 transition-all duration-200 min-h-[44px]"
+							@click="handleNavigation('patients')"
+						>
+							{{ $t('why_bonvi') }}
+						</button>
+						<button
+							class="flex items-center justify-center py-3 px-4 bg-white/40 backdrop-blur-sm rounded-xl font-medium text-gray-800 hover:bg-white/60 hover:text-[#12C09E] active:bg-white/70 transition-all duration-200 min-h-[44px]"
+							@click="handleNavigation('patients')"
+						>
+							{{ $t('faq') }}
+						</button>
+					</div>
+				</div>
+
+				<!-- Contact Information -->
+				<div class="bg-white/25 backdrop-blur-sm rounded-2xl p-4 mb-4 max-w-sm mx-auto w-full">
+					<h3 class="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3 text-center">Contact Us</h3>
+					<div class="space-y-2">
+						<a :href="`mailto:${'bonvi@gmail.com'}`" class="flex items-center justify-center gap-2 p-2 hover:bg-white/30 rounded-lg transition-colors duration-200 min-h-[40px]">
+							<NuxtImg class="h-4 w-4 flex-shrink-0" src="images/mail-icon.svg" alt="Email" />
+							<span class="text-sm font-medium text-gray-800 text-nowrap">{{ 'bonvi@gmail.com' }}</span>
+						</a>
+						<a :href="`tel:${'+998 97 991-62-20'}`" class="flex items-center justify-center gap-2 p-2 hover:bg-white/30 rounded-lg transition-colors duration-200 min-h-[40px]">
+							<NuxtImg class="h-4 w-4 flex-shrink-0" src="images/phone-icon.svg" alt="Phone" />
+							<span class="text-sm font-medium text-gray-800 text-nowrap">+998 97 991-62-20</span>
+						</a>
+					</div>
+				</div>
+				<!-- App Download Links -->
+				<div class="grid grid-cols-2 gap-4">
+					<div class="flex flex-col gap-2.5">
+						<div class="bg-white border-2 p-3 rounded-2xl">
+							<NuxtImg src="/images/qr-code.webp" class="w-full h-full" alt="App Store" />
+						</div>
+						<div class="bg-white border-2 py-2 px-2 rounded-xl">
+							<NuxtImg src="/images/app-store.svg" class="w-[90%] h-full" alt="App Store" />
+						</div>
+					</div>
+					<div class="flex flex-col gap-2.5">
+						<div class="bg-white border-2 p-3 rounded-2xl">
+							<NuxtImg src="/images/qr-code.webp" class="w-full h-full" />
+						</div>
+						<div class="bg-white border-2 py-2 px-2 rounded-xl">
+							<NuxtImg src="/images/google-play.svg" class="w-[90%] h-full" alt="App Store" />
 						</div>
 					</div>
 				</div>

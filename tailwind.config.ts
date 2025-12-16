@@ -15,6 +15,10 @@ export default <Partial<Config>>{
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+                sans: ['Inter', 'sans-serif'], 
+                "adero-trial": ['Adero Trial', 'sans-serif'], 
+            },
 			colors: {
 				dark: '#020D17',
 				gray: '#EDF2F7',
