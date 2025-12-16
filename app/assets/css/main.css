@@ -1,0 +1,12 @@
+.crazy-border {
+  @apply relative rounded-full bg-[#0b1117]
+         px-10 py-4
+         shadow-[0_20px_60px_rgba(0,0,0,0.6)];
+}
+
+/* inner stroke */
+.crazy-border::after {
+  content: '';
+  @apply absolute inset-[6px] rounded-full pointer-events-none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}

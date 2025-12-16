@@ -1,11 +1,13 @@
 <template>
 	<div>
+		<HeroSection />
 		<FaqSection />
 	</div>
 </template>
 
 <script setup>
 import FaqSection from '~/components/sections/faq/FaqSection.vue'
+import HeroSection from '~/components/sections/hero/HeroSection.vue'
 
 const { scrollToSection } = useNavigation()
 
