@@ -2,6 +2,7 @@
 	<div>
 		<HeroSection />
 		<WhySection />
+		<SectionsBrandsSlider />
 		<FaqSection />
 	</div>
 </template>
