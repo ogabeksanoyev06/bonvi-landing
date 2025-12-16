@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<HeroSection />
+		<SectionsBrandsSlider />
 		<FaqSection />
 	</div>
 </template>

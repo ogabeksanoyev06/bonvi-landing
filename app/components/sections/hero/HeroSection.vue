@@ -17,7 +17,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-	<section class="min-h-screen p-4 sm:p-6 md:p-8 lg:p-10">
+	<section id="hero" class="container min-h-screen p-4 sm:p-6 md:p-8 lg:p-10">
 		<div
 			class="relative bg-dark w-full h-full min-h-[calc(100vh-32px)] sm:min-h-[calc(100vh-48px)] md:min-h-[calc(100vh-64px)] lg:min-h-[calc(100vh-80px)] p-3 md:p-6 overflow-hidden rounded-[50px] flex flex-col">
 
