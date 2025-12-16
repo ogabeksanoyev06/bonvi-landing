@@ -1,6 +1,12 @@
 <template>
-	<section id="faq" ref="sectionRef" class="container">
-		<Accordion />
+	<section id="faq" ref="sectionRef" class="container py-10">
+		<div class="space-y-6">
+			<div class="flex items-center gap-2">
+				<NuxtImg src="/images/faq-icon.svg" alt="faq icon" class="size-10 shrink-0" />
+				<h2 class="text-3xl lg:text-[28px] font-bold !leading-130 font-adero-trial">Tez-tez beriladigan savollar</h2>
+			</div>
+			<Accordion />
+		</div>
 	</section>
 </template>
 

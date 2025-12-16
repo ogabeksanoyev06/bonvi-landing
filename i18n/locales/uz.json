@@ -1,3 +1,18 @@
 {
-	"copyright": "© Mualliflik huquqi {year} yil — “Bonvi” platformasi"
+	"copyright": "© Mualliflik huquqi {year} yil — “Bonvi” platformasi",
+	"products": "Mahsulotlar",
+	"advantages": "Afzalliklar",
+	"why_bonvi": "Nega BONVI?",
+	"faq": "FAQ",
+	"why_text_1": "Keng assortiment",
+	"why_description_1": "Biz sizga istalgan turdagi mahsulotni taqdim qila olamiz",
+
+	"why_text_2": "Sifatli mahsulot",
+	"why_description_2": "100% sifatli mahsulotlar",
+
+	"why_text_3": "Hamyonbop narx",
+	"why_description_3": "Bemalol savdolashib olasiz, o’rtacha narhlar faqat bizda",
+
+	"why_text_4": "Sifatli servis",
+	"why_description_4": "Endi usta qidirib ovora bo’lmang, malakali ustani biz topib beramiz"
 }
