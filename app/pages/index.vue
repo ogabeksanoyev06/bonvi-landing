@@ -1,10 +1,12 @@
 <template>
 	<div>
-		<button class="">sasasas</button>
+		<FaqSection />
 	</div>
 </template>
 
 <script setup>
+import FaqSection from '~/components/sections/faq/FaqSection.vue'
+
 const { scrollToSection } = useNavigation()
 
 onMounted(() => {
