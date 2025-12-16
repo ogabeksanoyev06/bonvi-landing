@@ -1,5 +1,5 @@
 <template>
-	<div class="relative rounded-[48px] overflow-hidden p-16 z-10">
+	<div class="relative md:rounded-[48px] overflow-hidden p-4 md:p-8 lg:p-16 z-10">
 		<h3 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] font-black text-white font-adero-trial">Nega Bonvi</h3>
 		<!-- Benefits Cards -->
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 relative z-20 mt-2 sm:mt-8">
@@ -20,8 +20,8 @@
 				</div>
 			</div>
 		</div>
-		<NuxtImg src="/images/why_bonvi_bg.webp" alt="Green bg" class="hidden sm:block absolute w-full h-full object-cover left-0 bottom-0 z-[-1]" />
-		<NuxtImg src="/images/why_bonvi_logo.webp" alt="Green bg" class="hidden sm:block absolute -top-14 -right-16 size-[200px] sm:size-[300px] lg:size-[480px]" />
+		<NuxtImg src="/images/why_bonvi_bg.webp" alt="Green bg" class="absolute w-full h-full object-cover left-0 bottom-0 z-[-1]" />
+		<NuxtImg src="/images/why_bonvi_logo.webp" alt="Green bg" class="absolute -top-14 -right-16 size-[200px] sm:size-[300px] lg:size-[480px]" />
 	</div>
 </template>
 
