@@ -1,28 +1,34 @@
 <template>
 	<section id="benefits" class="container py-10">
-		<div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
-			<!-- LEFT COLUMN -->
-			<div class="grid gap-5 lg:col-span-5">
-				<CardBrand />
-				<CardService />
+		<div class="flex flex-col gap-6">
+			<div class="flex items-center gap-2">
+				<NuxtImg src="/images/features-icon.svg" alt="features icon" class="size-8 shrink-0" />
+				<h2 class="text-lg md:text-xl lg:text-[28px] font-bold !leading-130 font-adero-trial">Afzalliklarimiz</h2>
 			</div>
-
-			<!-- RIGHT COLUMN -->
-			<div class="flex flex-col gap-5 lg:col-span-7">
-				<!-- Top cards -->
-				<div class="grid grid-cols-1 md:grid-cols-7 gap-5">
-					<div class="flex flex-col gap-5 md:col-span-3">
-						<CardDelivery />
-						<CardSupport />
-					</div>
-
-					<div class="md:col-span-4">
-						<CardFeatures />
-					</div>
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+				<!-- LEFT COLUMN -->
+				<div class="grid gap-5 lg:col-span-5">
+					<CardBrand />
+					<CardService />
 				</div>
 
-				<!-- Bottom card -->
-				<CardProduct />
+				<!-- RIGHT COLUMN -->
+				<div class="flex flex-col gap-5 lg:col-span-7">
+					<!-- Top cards -->
+					<div class="grid grid-cols-1 md:grid-cols-7 gap-5">
+						<div class="flex flex-col gap-5 md:col-span-3">
+							<CardDelivery />
+							<CardSupport />
+						</div>
+
+						<div class="md:col-span-4">
+							<CardFeatures />
+						</div>
+					</div>
+
+					<!-- Bottom card -->
+					<CardProduct />
+				</div>
 			</div>
 		</div>
 	</section>
