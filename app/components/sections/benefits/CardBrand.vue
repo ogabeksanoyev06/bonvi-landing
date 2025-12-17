@@ -1,7 +1,7 @@
 <template>
-	<div ref="cardRef" class="flex items-center justify-center bg-dark relative overflow-hidden w-full rounded-[32px] sm:rounded-[40px] lg:rounded-[48px]">
+	<div ref="cardRef" class="flex items-center justify-center bg-dark relative overflow-hidden w-full md:min-h-[295px] rounded-[32px] sm:rounded-[40px] lg:rounded-[48px]">
 		<div class="flex items-center justify-center">
-			<NuxtImg src="/images/logo-card-brand.webp" alt="logo" style="height: 295px; aspect-ratio: 111/59" />
+			<NuxtImg src="/images/logo-card-brand.webp" alt="logo" class="w-full h-full float-on-hover" />
 		</div>
 	</div>
 </template>
