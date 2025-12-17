@@ -1,12 +1,36 @@
 .crazy-border {
-  @apply relative rounded-full bg-[#0b1117]
+	@apply relative rounded-full bg-[#0b1117]
          px-10 py-4
          shadow-[0_20px_60px_rgba(0,0,0,0.6)];
 }
 
 /* inner stroke */
 .crazy-border::after {
-  content: '';
-  @apply absolute inset-[6px] rounded-full pointer-events-none;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+	content: "";
+	@apply absolute inset-[6px] rounded-full pointer-events-none;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.skeleton {
+	background-color: #f6f7f8;
+	background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: inline-block;
+	position: relative;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeholderShimmer;
+	animation-timing-function: linear;
+}
+
+@keyframes placeholderShimmer {
+	0% {
+		background-position: -468px 0;
+	}
+
+	100% {
+		background-position: 468px 0;
+	}
 }

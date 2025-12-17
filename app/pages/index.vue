@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<HeroSection />
+		<BenefitsSection />
 		<WhySection />
 		<SectionsBrandsSlider />
 		<FaqSection />
@@ -8,6 +9,7 @@
 </template>
 
 <script setup>
+import BenefitsSection from '~/components/sections/benefits/BenefitsSection.vue'
 import WhySection from '~/components/sections/why/WhySection.vue'
 import FaqSection from '~/components/sections/faq/FaqSection.vue'
 import HeroSection from '~/components/sections/hero/HeroSection.vue'
