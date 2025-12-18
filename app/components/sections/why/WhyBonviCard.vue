@@ -2,7 +2,7 @@
 	<div class="relative md:rounded-[48px] overflow-hidden p-4 md:p-8 lg:p-16 z-10">
 		<h3 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] font-black text-white font-adero-trial">Nega Bonvi</h3>
 		<!-- Benefits Cards -->
-		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 relative z-20 mt-2 sm:mt-8">
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 relative z-20 mt-2 sm:mt-8 lg:mt-12">
 			<div
 				v-for="(benefit, index) in benefits"
 				:key="index"
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<NuxtImg src="/images/why_bonvi_bg.webp" alt="Green bg" class="absolute w-full h-full object-cover left-0 bottom-0 z-[-1]" />
-		<NuxtImg src="/images/why_bonvi_logo.webp" alt="Green bg" class="absolute -top-14 -right-16 size-[200px] sm:size-[300px] lg:size-[480px]" />
+		<NuxtImg src="/images/why_bonvi_logo.webp" alt="Green bg" class="absolute -top-0 -right-0 size-[200px] sm:size-[300px] lg:size-[430px] aspect-square" />
 	</div>
 </template>
 
@@ -54,9 +54,9 @@ const benefits = [
 /* Glass card styles */
 .glass-card {
 	background: rgba(255, 255, 255, 0.02);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	box-shadow:
 		0 28px 40px 0 rgba(0, 0, 0, 0.2),
 		inset 0 1px 0 rgba(255, 255, 255, 0.5),
@@ -83,7 +83,7 @@ const benefits = [
 	left: 0;
 	right: 0;
 	height: 1px;
-	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .glass-card::after {
@@ -93,6 +93,6 @@ const benefits = [
 	left: 0;
 	width: 1px;
 	height: 100%;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.3));
 }
 </style>
