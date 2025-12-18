@@ -2,7 +2,7 @@
 	<div class="relative w-max font-sans country-select-root">
 		<button
 			@click="isOpen = !isOpen"
-			class="w-full flex items-center justify-between p-3 rounded-full border border-gray-700 bg-gray-900 text-white shadow-lg transition duration-200 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+			class="w-full flex items-center justify-between p-3 rounded-full glass-border text-white shadow-lg transition duration-200 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
 		>
 			<div class="flex items-center space-x-3">
 				<div class="w-7 h-7 rounded-full overflow-hidden flex items-center justify-center">
@@ -33,12 +33,12 @@
 			leave-from-class="transform opacity-100 scale-100"
 			leave-to-class="transform opacity-0 scale-95"
 		>
-			<ul v-if="isOpen" class="absolute z-10 w-full mt-1.5 bg-gray-900 rounded-xl shadow-2xl border border-gray-700 max-h-60 overflow-auto focus:outline-none">
+			<ul v-if="isOpen" class="glass-border !absolute z-10 w-full mt-1.5 !bg-dark rounded-xl shadow-2xl max-h-60 overflow-auto focus:outline-none">
 				<li
 					v-for="country in countries"
 					:key="country.code"
 					@click="selectCountry(country)"
-					class="flex items-center space-x-3 p-2.5 cursor-pointer text-white hover:bg-gray-800 transition duration-150"
+					class="flex items-center space-x-3 p-2.5 cursor-pointer text-white hover:!bg-gray/10 transition duration-150"
 					:class="{ 'bg-gray-800 font-bold': country.code === selectedCountry.code }"
 				>
 					<div class="w-7 h-7 rounded-full overflow-hidden flex items-center justify-center">

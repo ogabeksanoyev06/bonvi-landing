@@ -21,9 +21,9 @@ const toggleMenu = () => {
 		<div
 			class="relative bg-dark w-full h-full min-h-[calc(100vh-32px)] sm:min-h-[calc(100vh-48px)] md:min-h-[calc(100vh-64px)] lg:min-h-[calc(100vh-80px)] p-3 md:p-6 overflow-hidden rounded-[50px] flex flex-col">
 
-			<header class="relative z-50 w-full crazy-border flex justify-between">
+			<header class="relative z-50 w-full glass-border px-6 py-4 rounded-full flex justify-between">
 
-				<nav class="flex items-center w-max gap-10 crazy-border px-2 py-2 lg:px-6 lg:py-4">
+				<nav class="flex items-center w-max gap-10 max-md:glass-border rounded-full px-2 py-2 lg:px-6 lg:py-4">
 					<div class="z-50">
 						<img src="/images/logo.svg" width="95" height="28" alt="Logo">
 					</div>
@@ -64,27 +64,29 @@ const toggleMenu = () => {
 						</svg>
 					</button>
 				</div>
-
-				<div class="fixed inset-0 bg-dark/95 backdrop-blur-sm z-40 flex flex-col items-center justify-center transition-transform duration-300 lg:hidden"
-					:class="isMenuOpen ? 'translate-x-0' : 'translate-x-full'">
-
-					<ul class="flex flex-col items-center gap-8 mb-10">
-						<li v-for="item in menuItems" :key="item.label" class="text-white text-2xl font-semibold">
-							<a :href="item.href" @click="toggleMenu">{{ item.label }}</a>
-						</li>
-					</ul>
-
-					<div class="flex flex-col items-center gap-6">
-						<CountrySelect />
-
-						<button
-							class="mt-4 px-6 py-3 text-lg font-bold text-white bg-blue rounded-full transition duration-200 hover:bg-blue-600 focus:outline-none w-max">
-							Bog'lanish
-						</button>
-					</div>
-
-				</div>
 			</header>
+
+			<div class="fixed inset-0 bg-dark/95 backdrop-blur-sm z-40 flex flex-col items-center justify-center transition-transform duration-300 lg:hidden"
+				:class="isMenuOpen ? 'translate-x-0' : 'translate-x-full'">
+
+				<ul class="flex flex-col items-center gap-8 mb-10">
+					<li v-for="item in menuItems" :key="item.label" class="text-white text-2xl font-semibold">
+						<a :href="item.href" @click="toggleMenu">{{ item.label }}</a>
+					</li>
+				</ul>
+
+				<div class="flex flex-col items-center gap-6">
+					<CountrySelect />
+
+					<button
+						class="mt-4 px-6 py-3 text-lg font-bold text-white bg-blue rounded-full transition duration-200 hover:bg-blue-600 focus:outline-none w-max">
+						Bog'lanish
+					</button>
+				</div>
+
+			</div>
+
+
 			<main class="relative z-10 flex-grow flex items-center justify-center w-full">
 				<div
 					class="flex flex-col lg:flex-row gap-8 px-6 lg:gap-16 items-center justify-center w-full mx-auto mt-10 lg:mt-0">
