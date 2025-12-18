@@ -1,11 +1,12 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 import CountrySelect from '~/components/base/CountrySelect.vue'
 
 const menuItems = [
-	{ label: 'Mahsulotlar', href: '#products' },
-	{ label: 'Afzalliklar', href: '#about' },
-	{ label: 'Nega BONVI?', href: '#why' },
-	{ label: 'FAQ', href: '#faq' },
+	{ label: 'products', href: '#products' },
+	{ label: 'advantages', href: '#about' },
+	{ label: 'why_bonvi', href: '#why' },
+	{ label: 'faq', href: '#faq' },
 ]
 
 const isMenuOpen = ref(false)
@@ -65,7 +66,7 @@ const toggleMenu = () => {
 					:style="{ transitionDelay: `${index * 50}ms` }"
 				>
 					<a :href="item.href" class="font-adero-trial transition-colors duration-300 hover:text-blue">
-						{{ item.label }}
+						{{ $t(item.label) }}
 						<span
 							class="absolute left-0 -bottom-2 h-[3px] w-full origin-left scale-x-0 rounded-full bg-blue transition-transform duration-300 group-hover:scale-x-100"></span>
 					</a>
@@ -79,7 +80,7 @@ const toggleMenu = () => {
 					<CountrySelect />
 				</div>
 				<div class="transition-all duration-300 hover:scale-105">
-					<BaseMainButton text="Bog'lanish" icon="/images/call.svg" />
+					<BaseMainButton :text="$t('contact')" icon="/images/call.svg" />
 				</div>
 			</div>
 
@@ -133,7 +134,7 @@ const toggleMenu = () => {
 						animation: isMenuOpen ? `slideIn 0.5s ease-out ${index * 0.1}s both` : 'none'
 					}"
 				>
-					<a :href="item.href" @click="toggleMenu" class="font-adero-trial">{{ item.label }}</a>
+					<a :href="item.href" @click="toggleMenu" class="font-adero-trial">{{ $t(item.label) }}</a>
 				</li>
 			</ul>
 
@@ -144,7 +145,7 @@ const toggleMenu = () => {
 				}"
 			>
 				<CountrySelect />
-				<BaseMainButton text="Bog'lanish" icon="/images/call.svg" />
+				<BaseMainButton :text="$t('contact')" icon="/images/call.svg" />
 			</div>
 		</div>
 	</Transition>

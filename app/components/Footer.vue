@@ -177,7 +177,7 @@
 
 				<!-- Contact Information -->
 				<div class="bg-white/25 backdrop-blur-sm rounded-2xl p-4 mb-4 max-w-sm mx-auto w-full">
-					<h3 class="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3 text-center">Contact Us</h3>
+					<h3 class="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3 text-center">{{ $t('contact_us') }}</h3>
 					<div class="space-y-2">
 						<a :href="`mailto:${'bonvi@gmail.com'}`" class="flex items-center justify-center gap-2 p-2 hover:bg-white/30 rounded-lg transition-colors duration-200 min-h-[40px]">
 							<NuxtImg class="h-4 w-4 flex-shrink-0" src="images/mail-icon.svg" alt="Email" />
@@ -212,10 +212,10 @@
 			<div class="bg-[#E3F1FF14] backdrop-blur-[10px] py-4 md:py-6 lg:py-7 px-4 md:px-6 lg:px-8 border-t border-white">
 				<div class="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
 					<div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-6 text-center md:text-left">
-						<NuxtLinkLocale to="/static/privacy-policy" class="text-sm md:text-base !leading-140 transition-300 hover:text-blue"> Privacy Policy </NuxtLinkLocale>
-						<NuxtLinkLocale to="/static/cookie-policy" class="text-sm md:text-base !leading-140 transition-300 hover:text-blue"> Terms & Conditions </NuxtLinkLocale>
+						<NuxtLinkLocale to="/static/privacy-policy" class="text-sm md:text-base !leading-140 transition-300 hover:text-blue"> {{ $t('privacy_policy') }} </NuxtLinkLocale>
+						<NuxtLinkLocale to="/static/cookie-policy" class="text-sm md:text-base !leading-140 transition-300 hover:text-blue"> {{ $t('terms_conditions') }} </NuxtLinkLocale>
 					</div>
-					<p class="text-sm !leading-140 font-medium">Kompaniya tomonidan ishlab chiqilgan</p>
+					<p class="text-sm !leading-140 font-medium">{{ $t('developed_by') }}</p>
 					<p class="text-sm md:text-base !leading-140">{{ $t('copyright', { year: new Date().getFullYear() }) }}</p>
 				</div>
 			</div>

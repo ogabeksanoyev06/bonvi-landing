@@ -1,6 +1,6 @@
 <template>
 	<div class="relative md:rounded-[48px] overflow-hidden p-4 md:p-8 lg:p-16 z-10">
-		<h3 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] font-black text-white font-adero-trial">Nega Bonvi</h3>
+		<h3 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] font-black text-white font-adero-trial">{{ $t('why_bonvi') }}</h3>
 		<!-- Benefits Cards -->
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 relative z-20 mt-2 sm:mt-8 lg:mt-12">
 			<div

@@ -15,20 +15,20 @@
 					<div
 						class="flex flex-col w-full lg:w-1/2 gap-4 lg:gap-6 text-center lg:text-left order-2 lg:order-1">
 						<h1 class="text-white font-adero-trial text-2xl sm:text-4xl lg:text-5xl leading-tight">
-							Bonvi - qulay, sifatli va hamyonbop!
+							{{ $t('hero_title') }}
 						</h1>
 						<p class="text-white/80 text-base sm:text-lg lg:text-xl leading-relaxed">
-							Eng sifatli va xilma-xil mahsulotlar faqat bizda. Biz bilan
-							bog’lanib orzuyingizdagi skuterga ega bo’ling.
+							{{ $t('hero_description') }}
 						</p>
 
 
 						<div class="mt-4 flex justify-center flex-col sm:flex-row gap-2 md:gap-4 lg:justify-start">
-							<BaseMainButton text="Mahsulotlar" icon="/images/products-icon.svg" />
+							<BaseMainButton :text="$t('products')" icon="/images/products-icon.svg" />
 
 							<button class="glass-border px-4 py-3 justify-center rounded-full flex items-center gap-3">
-								<span class="text-white text-sm font-semibold leading-140 font-adero-trial">Nega
-									biz</span>
+								<span class="text-white text-sm font-semibold leading-140 font-adero-trial">
+									{{ $t('why_us') }}
+								</span>
 								<NuxtImg src="/images/arrow-right-icon.svg" class="size-6 aspect-square" />
 							</button>
 						</div>

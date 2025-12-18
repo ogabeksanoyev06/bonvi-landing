@@ -6,11 +6,11 @@
 		>
 			<div class="flex items-center space-x-3">
 				<div class="w-7 h-7 rounded-full overflow-hidden flex items-center justify-center">
-					<img v-if="selectedCountry.flag" :src="selectedCountry.flag" :alt="selectedCountry.name" class="w-full h-full object-cover" />
-					<span v-else class="text-xs">{{ selectedCountry.code }}</span>
+					<img v-if="currentLang.flag" :src="currentLang.flag" :alt="currentLang.name" class="w-full h-full object-cover" />
+					<span v-else class="text-xs">{{ currentLang.code }}</span>
 				</div>
 
-				<span class="text-sm font-adero-trial font-semibold tracking-wider">{{ selectedCountry.code }}</span>
+				<span class="text-sm font-adero-trial font-semibold tracking-wider uppercase">{{ currentLang.code }}</span>
 			</div>
 
 			<svg
@@ -35,18 +35,18 @@
 		>
 			<ul v-if="isOpen" class="glass-border !absolute z-10 w-full mt-1.5 !bg-dark rounded-xl shadow-2xl max-h-60 overflow-auto focus:outline-none">
 				<li
-					v-for="country in countries"
-					:key="country.code"
-					@click="selectCountry(country)"
+					v-for="lang in availableLanguages"
+					:key="lang.code"
+					@click="setLanguage(lang.code)"
 					class="flex items-center space-x-3 p-2.5 cursor-pointer text-white hover:!bg-gray/10 transition duration-150"
-					:class="{ 'bg-gray-800 font-bold': country.code === selectedCountry.code }"
+					:class="{ 'bg-gray-800 font-bold': lang.code === locale }"
 				>
 					<div class="w-7 h-7 rounded-full overflow-hidden flex items-center justify-center">
-						<img v-if="country.flag" :src="country.flag" :alt="country.name" class="w-full h-full object-cover" />
-						<span v-else class="text-xs">{{ country.code }}</span>
+						<img v-if="lang.flag" :src="lang.flag" :alt="lang.name" class="w-full h-full object-cover" />
+						<span v-else class="text-xs">{{ lang.code }}</span>
 					</div>
 
-					<span>{{ country.code }}</span>
+					<span class="uppercase">{{ lang.code }}</span>
 				</li>
 			</ul>
 		</transition>
@@ -54,19 +54,22 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
-const countries = [
-	{ code: 'UZB', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/64px-Flag_of_Uzbekistan.svg.png' },
-	{ code: 'ENG', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/64px-Flag_of_the_United_States.svg.png' },
-	{ code: 'CAN', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/64px-Flag_of_Canada_%28Pantone%29.svg.png' },
-	{ code: 'GB', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/64px-Flag_of_the_United_Kingdom.svg.png' }
+import { ref, watch, computed } from 'vue'
+const { locale, setLocale } = useI18n()
+
+const languages = [
+	{ code: 'uz', name: 'Uzbek', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/64px-Flag_of_Uzbekistan.svg.png' },
+	{ code: 'en', name: 'English', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/64px-Flag_of_the_United_States.svg.png' },
+	{ code: 'ru', name: 'Russian', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/64px-Flag_of_Russia.svg.png' }
 ]
 
 const isOpen = ref(false)
-const selectedCountry = ref(countries.find((c) => c.code === 'UZ') || countries[0])
 
-const selectCountry = (country) => {
-	selectedCountry.value = country
+const currentLang = computed(() => languages.find(l => l.code === locale.value) || languages[0])
+const availableLanguages = computed(() => languages)
+
+const setLanguage = (code) => {
+	setLocale(code)
 	isOpen.value = false
 }
 

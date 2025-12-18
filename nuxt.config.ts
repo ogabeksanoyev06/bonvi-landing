@@ -21,13 +21,11 @@ export default defineNuxtConfig({
 			{ code: 'uz', iso: 'uz', file: 'uz.json' },
 			{ code: 'en', iso: 'en', file: 'en.json' }
 		],
-		defaultLocale: 'uz',
 		strategy: 'prefix_and_default',
 		detectBrowserLanguage: {
 			useCookie: true,
 			cookieKey: 'locale'
 		},
-		langDir: 'locales',
 		compilation: {
 			strictMessage: false
 		}
