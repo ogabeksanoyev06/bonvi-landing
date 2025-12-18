@@ -19,7 +19,7 @@
 				v-for="cat in categories"
 				:key="cat.value"
 				:class="[
-					'shrink-0 px-3 py-2 rounded-xl text-base font-bold leading-130 transition-300 active:scale-95',
+					'shrink-0 px-3 py-2 rounded-xl text-base font-bold leading-130 text-[#0E0F11] transition-300 active:scale-95',
 					activeCategory === cat.value ? 'bg-gradient-to-b from-[#0083FF] to-[#001D88] text-white' : 'bg-gray text-gray-800 hover:bg-gray/80'
 				]"
 				@click="activeCategory = cat.value"
