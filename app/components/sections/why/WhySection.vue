@@ -1,5 +1,5 @@
 <template>
-	<section id="why" ref="sectionRef" class="md:container py-8 sm:py-10 lg:py-12">
+	<section id="why" ref="sectionRef" class="md:container pt-16 sm:pt-24">
 		<div>
 			<WhyAdamCard />
 		</div>

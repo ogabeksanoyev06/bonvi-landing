@@ -1,12 +1,12 @@
 <template>
 	<div>
 		<HeroSection />
+		<SectionsBrandsSlider />
 		<BlogSection />
 		<ProductSection />
 		<AboutSection />
 		<BenefitsSection />
 		<WhySection />
-		<SectionsBrandsSlider />
 		<FaqSection />
 	</div>
 </template>

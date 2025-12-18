@@ -1,5 +1,5 @@
 <template>
-	<section ref="blog" class="py-10 overflow-hidden">
+	<section ref="blog" class="pt-16 sm:pt-24 overflow-hidden">
 		<div class="container">
 			<div class="flex items-center gap-2 mb-6">
 				<NuxtImg src="/images/lightbulb-icon.svg" alt="icon" class="size-8 h-10 shrink-0" />
