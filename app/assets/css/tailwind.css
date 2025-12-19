@@ -2,7 +2,6 @@
 
 @import "tailwindcss";
 @config "../../../tailwind.config.ts";
-@import "@nuxt/ui";
 
 
 @layer utilities {

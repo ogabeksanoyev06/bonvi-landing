@@ -4,7 +4,6 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	css: ['~/assets/css/tailwind.css', '~/assets/css/fonts.css', '~/assets/css/main.css'], // Fixed: Added ~/ prefix
 	modules: [
-		'@nuxt/ui',
 		'@nuxtjs/i18n',
 		[
 			'@pinia/nuxt',
@@ -15,7 +14,6 @@ export default defineNuxtConfig({
 		'@nuxt/eslint',
 		'@nuxt/image'
 	],
-	/* PostCSS handled by Nuxt UI / separate config if needed */
 	i18n: {
 		locales: [
 			{ code: 'ru', iso: 'ru-RU', file: 'ru.json' },
@@ -63,6 +61,18 @@ export default defineNuxtConfig({
 					quality: 85
 				}
 			}
+		}
+	},
+	vite: {
+		server: {
+			hmr: {
+				overlay: false
+			}
+		}
+	},
+	postcss: {
+		plugins: {
+			'@tailwindcss/postcss': {}
 		}
 	}
 })
