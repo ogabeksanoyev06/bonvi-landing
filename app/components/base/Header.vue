@@ -38,13 +38,14 @@ const toggleMenu = () => {
 <template>
 	<header
 		:class="[
-			'z-50 flex justify-between items-center',
+			'z-50',
 			isSticky
 				? '!fixed top-0 left-0 w-full rounded-none !bg-dark/95 backdrop-blur-lg py-3 px-6 shadow-2xl'
 				: 'relative glass-border p-2 pr-6 lg:px-6 lg:py-4 rounded-full backdrop-blur-sm'
 		]"
 	>
-		<nav 
+		<div class="max-w-7xl mx-auto flex justify-between items-center">
+			<nav 
 			class="flex items-center w-max gap-10 rounded-full"
 			:class="isSticky ? 'px-0 py-0' : 'glass-border px-2 py-2 lg:px-6 lg:py-4'"
 		>
@@ -114,6 +115,7 @@ const toggleMenu = () => {
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
 				</svg>
 			</button>
+		</div>
 		</div>
 	</header>
 

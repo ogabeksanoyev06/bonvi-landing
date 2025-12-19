@@ -21,7 +21,6 @@ export default defineNuxtConfig({
 			{ code: 'en', iso: 'en-US', file: 'en.json' } // Fixed: Added proper ISO code
 		],
 		langDir: 'locales', // Added: Specify locales directory
-		defaultLocale: 'ru', // Added: Set default locale
 		strategy: 'prefix_and_default',
 		detectBrowserLanguage: {
 			useCookie: true,
