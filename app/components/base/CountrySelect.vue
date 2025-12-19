@@ -3,6 +3,7 @@
 		<button
 			@click="isOpen = !isOpen"
 			class="w-full flex items-center justify-between p-3 rounded-full glass-border text-white shadow-lg transition duration-200 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+			:class="{'!bg-white !text-blue' : isOpen}"
 		>
 			<div class="flex items-center space-x-3">
 				<div class="w-7 h-7 rounded-full overflow-hidden flex items-center justify-center">
@@ -33,20 +34,24 @@
 			leave-from-class="transform opacity-100 scale-100"
 			leave-to-class="transform opacity-0 scale-95"
 		>
-			<ul v-if="isOpen" class="glass-border !absolute z-10 w-full mt-1.5 !bg-dark rounded-xl shadow-2xl max-h-60 overflow-auto focus:outline-none">
+			<ul v-if="isOpen" class="glass-border !absolute -left-8 z-10 w-40 mt-1.5 !bg-dark rounded-4xl shadow-2xl max-h-60 overflow-auto focus:outline-none">
 				<li
 					v-for="lang in availableLanguages"
 					:key="lang.code"
 					@click="setLanguage(lang.code)"
-					class="flex items-center space-x-3 p-2.5 cursor-pointer text-white hover:!bg-gray/10 transition duration-150"
-					:class="{ 'bg-gray-800 font-bold': lang.code === locale }"
+					class="flex items-center justify-between space-x-3 p-2.5 cursor-pointer text-white hover:!bg-gray/10 transition duration-150"
+					:class="{ 'bg-white !text-dark font-bold': lang.code === locale }"
 				>
-					<div class="w-7 h-7 rounded-full overflow-hidden flex items-center justify-center">
-						<img v-if="lang.flag" :src="lang.flag" :alt="lang.name" class="w-full h-full object-cover" />
-						<span v-else class="text-xs">{{ lang.code }}</span>
+					<div class="flex items-center space-x-2">
+						<div class="w-7 h-7 rounded-full overflow-hidden flex items-center">
+							<img v-if="lang.flag" :src="lang.flag" :alt="lang.name" class="w-full h-full object-cover" />
+							<span v-else class="text-xs">{{ lang.code }}</span>
+						</div>
+
+						<span class="uppercase">{{ lang.code }}</span>
 					</div>
 
-					<span class="uppercase">{{ lang.code }}</span>
+					<img v-if="lang.code === locale" width="20" height="20" src="/images/langs/tick.svg" class="shrink-0" alt="">
 				</li>
 			</ul>
 		</transition>
@@ -58,9 +63,10 @@ import { ref, watch, computed } from 'vue'
 const { locale, setLocale } = useI18n()
 
 const languages = [
-	{ code: 'uz', name: 'Uzbek', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/64px-Flag_of_Uzbekistan.svg.png' },
-	{ code: 'en', name: 'English', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/64px-Flag_of_the_United_States.svg.png' },
-	{ code: 'ru', name: 'Russian', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/64px-Flag_of_Russia.svg.png' }
+	{ code: 'uz', name: 'Uzbek', flag: '/images/langs/uz.svg' },
+	{ code: 'en', name: 'English', flag: '/images/langs/en.svg' },
+	{ code: 'ru', name: 'Russian', flag: '/images/langs/ru.svg' },
+	{ code: 'cn', name: 'Chinese', flag: '/images/langs/china.svg' }
 ]
 
 const isOpen = ref(false)

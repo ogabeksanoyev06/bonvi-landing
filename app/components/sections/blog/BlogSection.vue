@@ -3,12 +3,12 @@
 		<div class="container">
 			<div class="flex items-center gap-2 mb-6">
 				<NuxtImg src="/images/lightbulb-icon.svg" alt="icon" class="size-8 h-10 shrink-0" />
-				<h2 class="text-lg md:text-xl pt-1 lg:text-[28px] font-bold !leading-130 font-adero-trial">Qaynoq yangiliklar</h2>
+				<h2 class="text-lg md:text-xl pt-1 lg:text-[28px] font-bold !leading-130 font-adero-trial">{{ $t('blog_title') }}</h2>
 			</div>
 			<div class="w-full sm:max-w-[800px]">
 				<Swiper v-bind="settings" class="!overflow-visible !w-full">
 					<SwiperSlide v-for="key in 5" :key="key">
-						<BlogCard title="Qaynoq&#10;chegirma" description="Qariyalar uchun mapet" :price="1222000" :old-price="2000000" />
+						<BlogCard :title="$t('blog_discount')" :description="$t('blog_moped_senior')" :price="1222000" :old-price="2000000" />
 					</SwiperSlide>
 				</Swiper>
 			</div>

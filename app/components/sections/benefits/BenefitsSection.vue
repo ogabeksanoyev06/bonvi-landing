@@ -3,7 +3,7 @@
 		<div class="flex flex-col gap-6">
 			<div class="flex items-center gap-2">
 				<NuxtImg src="/images/features-icon.svg" alt="features icon" class="size-8 shrink-0" />
-				<h2 class="text-lg md:text-xl lg:text-[28px] font-bold !leading-130 font-adero-trial">Afzalliklarimiz</h2>
+				<h2 class="text-lg md:text-xl lg:text-[28px] font-bold !leading-130 font-adero-trial">{{ $t('benefits_title') }}</h2>
 			</div>
 			<div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
 				<!-- LEFT COLUMN -->

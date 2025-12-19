@@ -9,7 +9,7 @@
 		<div class="bg-gray rounded-[24px] sm:rounded-[32px] lg:rounded-[48px] px-6 sm:px-8">
 			<div v-if="loading" class="p-6 sm:p-8 text-center">
 				<div class="animate-spin h-8 w-8 border-b-2 border-blue mx-auto rounded-full" />
-				<p class="text-sm sm:text-base lg:text-xl mt-4">Loading FAQs...</p>
+				<p class="text-sm sm:text-base lg:text-xl mt-4">{{ $t('faq_loading') }}</p>
 			</div>
 
 			<div v-for="(item, index) in accordionItems" :key="index" class="border-b border-dark/10 last:border-b-0 py-8 cursor-pointer">
@@ -39,38 +39,33 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
 const loading = ref(false)
 
-const accordionItems = ref([
+const accordionItems = computed(() => [
 	{
-		title: 'Skuterni qanday buyurtma qilsam bo‘ladi?',
-		content:
-			'Platforma orqali o‘zingizga yoqqan skuterni tanlaysiz yoki sizga yaqin bo‘lgan hududdagi hamkor do‘konlarimizdan buyurtma berishingiz mumkin. Buyurtma qoldirish uchun aloqa maʼlumotlaringizni kiritasiz. 24 soat ichida mutaxassislarimiz siz bilan bog‘lanib, buyurtmani rasmiylashtirib beradi.'
+		title: t('faq_q1'),
+		content: t('faq_a1')
 	},
 	{
-		title: 'To‘lov usullari qanday? Bo‘lib to‘lash imkoniyati bormi?',
-		content:
-			'To‘lovni naqd, bank kartasi orqali yoki hamkor moliyaviy tashkilotlar yordamida amalga oshirishingiz mumkin. Shuningdek, bo‘lib to‘lash (nasiya) imkoniyati ham mavjud. To‘lov shartlari tanlangan model va hamkorlarga qarab farqlanishi mumkin.'
+		title: t('faq_q2'),
+		content: t('faq_a2')
 	},
 	{
-		title: 'Kafolat nechchi oy va nimalarni o‘z ichiga oladi?',
-		content:
-			'Skuterlar uchun odatda 6 oydan 12 oygacha kafolat taqdim etiladi. Kafolat dvigatel, elektron qismlar va asosiy texnik nosozliklarni o‘z ichiga oladi. Mexanik shikastlanishlar va noto‘g‘ri foydalanish holatlari kafolat doirasiga kirmaydi.'
+		title: t('faq_q3'),
+		content: t('faq_a3')
 	},
 	{
-		title: 'Servis va ehtiyot qismlar bormi?',
-		content:
-			'Ha, servis xizmati va original ehtiyot qismlar mavjud. Texnik xizmat ko‘rsatish hamkor servis markazlarida amalga oshiriladi. Zarur ehtiyot qismlar tezkor yetkazib beriladi.'
+		title: t('faq_q4'),
+		content: t('faq_a4')
 	},
 	{
-		title: 'Qanday hujjatlar beriladi? Ro‘yxatdan o‘tkazish bo‘yicha yordam bo‘ladimi?',
-		content:
-			'Xarid vaqtida shartnoma, kafolat taloni va texnik hujjatlar taqdim etiladi. Zarur hollarda skuterni ro‘yxatdan o‘tkazish bo‘yicha ham maslahat va amaliy yordam ko‘rsatiladi.'
+		title: t('faq_q5'),
+		content: t('faq_a5')
 	},
 	{
-		title: 'Qaytarish yoki bekor qilish qanday ishlaydi?',
-		content:
-			'Buyurtmani belgilangan muddat ichida bekor qilish yoki mahsulotni qaytarish mumkin. Qaytarish shartlari mahsulot holati va amaldagi qoidalarga muvofiq amalga oshiriladi. Batafsil maʼlumotni mutaxassislarimizdan olishingiz mumkin.'
+		title: t('faq_q6'),
+		content: t('faq_a6')
 	}
 ])
 

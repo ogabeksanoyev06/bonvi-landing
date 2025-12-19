@@ -8,7 +8,7 @@
 				<div class="bg-blue rounded-full p-3 sm:p-4 lg:p-[18px]">
 					<NuxtImg src="/images/checkflower-icon.svg" alt="Checkflower icon" class="size-6 sm:size-7 lg:size-9" />
 				</div>
-				<p class="text-base sm:text-lg lg:text-2xl font-bold leading-130 text-white">Ekologiyaga zararsiz</p>
+				<p class="text-base sm:text-lg lg:text-2xl font-bold leading-130 text-white">{{ $t('feature_eco') }}</p>
 			</div>
 			<div
 				class="absolute -top-1 sm:-top-2 glass-card card-2 py-1.5 sm:py-2 px-4 sm:px-5 lg:px-6 flex items-center gap-3 sm:gap-4 lg:gap-5 rounded-[24px] sm:rounded-[28px] lg:rounded-[32px]"
@@ -16,7 +16,7 @@
 				<div class="bg-blue rounded-full p-2 sm:p-2.5 lg:p-3">
 					<NuxtImg src="/images/checkflower-icon.svg" alt="Checkflower icon" class="size-4 sm:size-5 lg:size-6" />
 				</div>
-				<div class="text-sm sm:text-base font-bold leading-130 text-white">Oldindan ogohlantirilgan narx</div>
+				<div class="text-sm sm:text-base font-bold leading-130 text-white">{{ $t('feature_price') }}</div>
 			</div>
 			<div
 				class="absolute -top-3 sm:-top-4 lg:-top-2 glass-card card-3 py-1.5 sm:py-1.5 px-3 sm:px-4 lg:px-[18px] flex items-center gap-2 sm:gap-3 lg:gap-[15px] rounded-2xl sm:rounded-3xl"
@@ -24,13 +24,13 @@
 				<div class="bg-blue rounded-full p-1.5 sm:p-2 lg:p-[9px]">
 					<NuxtImg src="/images/checkflower-icon.svg" alt="Checkflower icon" class="size-3 sm:size-4 lg:size-[18px]" />
 				</div>
-				<div class="text-[10px] sm:text-xs font-bold leading-130 text-white">Past tovushda sayohat qilish</div>
+				<div class="text-[10px] sm:text-xs font-bold leading-130 text-white">{{ $t('feature_sound') }}</div>
 			</div>
 		</div>
 		<div class="grid gap-2 px-4 sm:px-5 lg:px-7">
-			<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl !leading-140 font-bold text-white">3 muhim afzallik</h3>
+			<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl !leading-140 font-bold text-white">{{ $t('feature_3_benefits') }}</h3>
 			<p class="text-sm sm:text-base !leading-140 text-white">
-				Mahsulotimizni asosiy afzalliklaridan xabardormisiz? Biz nafaqat sizga qulay mahsulotni taklif qilamiz, balkim oltin 3 tamoyilni ham saqlab qolamiz.
+				{{ $t('feature_desc') }}
 			</p>
 		</div>
 		<NuxtImg src="/images/bg-card-features.webp" alt="overlay" class="absolute w-full left-0 -bottom-0 z-[-1]" />

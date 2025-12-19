@@ -20,9 +20,10 @@
 						</p>
 
 						<div class="mt-4 flex justify-center flex-col sm:flex-row gap-2 md:gap-4 lg:justify-start">
-							<a href="#products">
-								<BaseMainButton :text="$t('products')" icon="/images/products-icon.svg" />
+							<a href="#products" class="max-sm:w-full w-max">
+								<BaseMainButton class="max-sm:w-full" :text="$t('products')" icon="/images/products-icon.svg" />
 							</a>
+
 							<a href="#why" class="glass-border px-4 py-3 justify-center rounded-full flex items-center gap-3">
 								<span class="text-white text-sm font-semibold leading-140 font-adero-trial">
 									{{ $t('why_us') }}

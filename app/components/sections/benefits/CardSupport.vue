@@ -7,8 +7,8 @@
 			<NuxtImg src="/images/card-support-icon.svg" alt="logo" class="size-8 aspect-square" />
 		</div>
 		<div class="grid gap-1">
-			<h3 class="text-xl font-extrabold leading-140 font-adero-trial bg-gradient-to-r from-[#9AD7FF] to-[#E6F4FF] bg-clip-text text-transparent">Qo‘llab-quvvatlash</h3>
-			<p class="text-xs leading-140 text-white">Biz doyimo sizni qo’llab quvvatlaymiz</p>
+			<h3 class="text-xl font-extrabold leading-140 font-adero-trial bg-gradient-to-r from-[#9AD7FF] to-[#E6F4FF] bg-clip-text text-transparent">{{ $t('support_title') }}</h3>
+			<p class="text-xs leading-140 text-white">{{ $t('support_desc') }}</p>
 		</div>
 	</div>
 </template>

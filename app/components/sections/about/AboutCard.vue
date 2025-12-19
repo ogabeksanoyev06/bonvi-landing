@@ -4,19 +4,19 @@
 			class="card-1 flex flex-col gap-6 md:flex-1 md:basis-0 bg-black rounded-[32px] lg:rounded-l-[48px] lg:rounded-r-none h-auto lg:h-[330px] px-7 py-8 lg:px-10 lg:py-11 relative z-10 overflow-hidden"
 		>
 			<h1 class="text-[#178EFF] text-[80px] !leading-[56px] font-bold">{{ productTypesCounter.formattedCount }}+</h1>
-			<p class="text-xl lg:text-[32px] !leading-120 font-semibold lg:font-bold text-white">Mahsulotimiz turlari</p>
+			<p class="text-xl lg:text-[32px] !leading-120 font-semibold lg:font-bold text-white">{{ $t('about_card_product_types') }}</p>
 			<NuxtImg src="/images/bg-card-about.webp" alt="decor" class="md:block hidden absolute inset-0 h-full bottom-0 left-0 w-full z-[-1]" />
 			<NuxtImg src="/images/bg-card-about2.svg" alt="decor" class="absolute block md:hidden inset-0 h-full bottom-0 left-0 w-full z-[-1]" />
 		</div>
 		<div class="card-2 flex flex-col gap-5 md:flex-1 md:basis-0 bg-[#178EFF] rounded-[32px] lg:rounded-t-[48px] lg:rounded-b-none h-auto lg:h-[400px] lg:mt-[-70px] py-12 px-8">
 			<h1 class="text-white text-6xl lg:text-[84px] !leading-130 font-bold">{{ totalProducedProductsCounter.formattedCount }}+</h1>
-			<p class="text-xl lg:text-[32px] !leading-120 font-bold text-white">Hozirgacha ishlab chiqarilgan mahsulotlarimiz soni</p>
+			<p class="text-xl lg:text-[32px] !leading-120 font-bold text-white">{{ $t('about_card_total_produced') }}</p>
 		</div>
 		<div
 			class="card-3 flex flex-col gap-6 md:flex-1 md:basis-0 bg-black rounded-[32px] lg:rounded-r-[48px] lg:rounded-l-none h-auto lg:h-[330px] px-7 py-8 lg:px-10 lg:py-11 relative z-10 overflow-hidden"
 		>
 			<h1 class="text-[#178EFF] text-[80px] !leading-[56px] font-bold">{{ branchesCountCounter.formattedCount }}+</h1>
-			<p class="text-xl lg:text-[32px] !leading-120 font-semibold lg:font-bold text-white">Yurtimizda filiallar soni</p>
+			<p class="text-xl lg:text-[32px] !leading-120 font-semibold lg:font-bold text-white">{{ $t('about_card_branches_count') }}</p>
 			<NuxtImg src="/images/bg-card-about.webp" alt="decor" class="md:block hidden absolute inset-0 h-full bottom-0 left-0 w-full z-[-1]" />
 			<NuxtImg src="/images/bg-card-about2.svg" alt="decor" class="absolute block md:hidden inset-0 h-full bottom-0 left-0 w-full z-[-1]" />
 		</div>

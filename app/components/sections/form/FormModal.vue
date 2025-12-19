@@ -3,7 +3,7 @@
 		<div class="relative flex flex-col gap-6 z-10 w-full overflow-hidden px-6 py-6">
 			<div class="header flex flex-col items-center gap-4 text-center">
 				<NuxtImg src="/images/form-modal-bonvi-logo.png" alt="Bonvi Logo" class="size-20 mx-auto object-contain" />
-				<h3 class="text-xl font-bold">Hamkorlik uchun ma’lumotlaringizni qoldiring, tez orada bog’lanamiz.</h3>
+				<h3 class="text-xl font-bold">{{ $t('modal_title') }}</h3>
 			</div>
 			<button type="button" class="absolute top-4 right-4 p-2 rounded-full bg-gray/70 hover:bg-gray/90 transition-300" @click="isOpen = false" aria-label="Close modal">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -13,17 +13,17 @@
 			<form class="flex flex-col gap-6" @submit.prevent="handleSubmit">
 				<div class="flex flex-col gap-4">
 					<div class="flex flex-col gap-2 w-full">
-						<label class="text-base leading-130">Ism-sharifingiz</label>
+						<label class="text-base leading-130">{{ $t('input_name') }}</label>
 						<input
 							v-model="formData.name"
 							type="text"
-							placeholder="Ismingizni kiriting"
+							:placeholder="$t('input_name_placeholder')"
 							class="text-base w-full h-11 flex items-center bg-gray border border-transparent rounded-2xl px-3 placeholder-[#676767] placeholder:text-base outline-none focus:outline-none focus:border-dark focus:bg-white transition-300"
 							required
 						/>
 					</div>
 					<div class="flex flex-col gap-2 w-full">
-						<label class="text-base leading-130">Telefon raqamingiz</label>
+						<label class="text-base leading-130">{{ $t('input_phone') }}</label>
 						<div class="relative">
 							<div class="flex items-center gap-2 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -47,11 +47,11 @@
 						</div>
 					</div>
 					<div class="flex flex-col gap-2 w-full">
-						<label class="text-base leading-130">E-mail manzilingiz</label>
+						<label class="text-base leading-130">{{ $t('input_email') }}</label>
 						<input
 							v-model="formData.email"
 							type="email"
-							placeholder="E-mail manzilingizni kiriting"
+							:placeholder="$t('input_email_placeholder')"
 							class="text-base w-full h-11 flex items-center bg-gray border border-transparent rounded-2xl px-3 placeholder-[#676767] placeholder:text-base outline-none focus:outline-none focus:border-dark focus:bg-white transition-300"
 							required
 						/>
@@ -62,7 +62,7 @@
 					class="flex items-center justify-center gap-2 bg-dark rounded-full h-12 border-2 border-dark w-full px-4 py-3 disabled:opacity-50 disabled:cursor-not-allowed"
 					:disabled="!isFormValid"
 				>
-					<span class="text-white text-sm font-semibold leading-140 font-adero-trial">Yuborish</span>
+					<span class="text-white text-sm font-semibold leading-140 font-adero-trial">{{ $t('submit_btn') }}</span>
 					<NuxtImg src="/images/arrow-right-icon.svg" class="size-6 aspect-square" />
 				</button>
 			</form>
@@ -75,6 +75,7 @@
 import Modal from '~/components/Modal.vue'
 
 const isOpen = defineModel('modelValue', { required: true })
+const { t } = useI18n()
 
 const formData = ref({
 	name: '',
@@ -100,7 +101,7 @@ const isFormValid = computed(() => {
 })
 const handleSubmit = async () => {
 	if (!isFormValid.value) {
-		showToast('Iltimos, barcha maydonlarni to‘g‘ri to‘ldiring', 'error')
+		showToast(t('validation_fill_all'), 'error')
 		return
 	}
 	try {
@@ -117,10 +118,10 @@ const handleSubmit = async () => {
 			phone: ''
 		}
 		isOpen.value = false
-		showToast('Ariza muvaffaqiyatli yuborildi', 'success')
+		showToast(t('success_message'), 'success')
 	} catch (error) {
 		console.error(error)
-		showToast(error?.data?.message || "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring.", 'error')
+		showToast(error?.data?.message || t('error_message'), 'error')
 	}
 }
 </script>
