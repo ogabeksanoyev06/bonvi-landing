@@ -19,5 +19,15 @@
     "contact_us": "Связаться с нами",
     "privacy_policy": "Политика конфиденциальности",
     "terms_conditions": "Условия использования",
-    "developed_by": "Разработано компанией"
+    "developed_by": "Разработано компанией",
+    "modal_title": "Оставьте свои данные для партнерства, мы скоро свяжемся с вами.",
+    "input_name": "Ф.И.О.",
+    "input_name_placeholder": "Введите ваше Ф.И.О.",
+    "input_phone": "Номер телефона",
+    "input_email": "Электронная почта",
+    "input_email_placeholder": "Введите вашу электронную почту",
+    "submit_btn": "Отправить",
+    "validation_name": "Имя обязательно",
+    "validation_phone": "Номер телефона обязателен",
+    "validation_email": "Неверный формат электронной почты"
 }

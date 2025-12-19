@@ -19,5 +19,15 @@
 	"contact_us": "Biz bilan bog'lanish",
 	"privacy_policy": "Maxfiylik siyosati",
 	"terms_conditions": "Foydalanish shartlari",
-	"developed_by": "Kompaniya tomonidan ishlab chiqilgan"
+	"developed_by": "Kompaniya tomonidan ishlab chiqilgan",
+	"modal_title": "Hamkorlik uchun ma'lumotlaringizni qoldiring, tez orada bog'lanamiz.",
+	"input_name": "Ism-sharifingiz",
+	"input_name_placeholder": "Ism-sharifingizni kiriting",
+	"input_phone": "Telefon raqamingiz",
+	"input_email": "E-mail manzilingiz",
+	"input_email_placeholder": "E-mail manzilingizni kiriting",
+	"submit_btn": "Yuborish",
+	"validation_name": "Ism kiritish majburiy",
+	"validation_phone": "Telefon raqam kiritish majburiy",
+	"validation_email": "Email noto'g'ri formatda"
 }

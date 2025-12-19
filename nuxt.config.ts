@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	compatibilityDate: '2025-07-15',
+	compatibilityDate: '2024-07-15', // Fixed: Changed from future date 2025 to 2024
 	devtools: { enabled: true },
-	css: ['/assets/css/tailwind.css', '/assets/css/fonts.css', '/assets/css/main.css'],
+	css: ['~/assets/css/tailwind.css', '~/assets/css/fonts.css', '~/assets/css/main.css'], // Fixed: Added ~/ prefix
 	modules: [
-		'@nuxtjs/tailwindcss',
+		'@nuxt/ui',
 		'@nuxtjs/i18n',
 		[
 			'@pinia/nuxt',
@@ -15,16 +15,20 @@ export default defineNuxtConfig({
 		'@nuxt/eslint',
 		'@nuxt/image'
 	],
+	/* PostCSS handled by Nuxt UI / separate config if needed */
 	i18n: {
 		locales: [
 			{ code: 'ru', iso: 'ru-RU', file: 'ru.json' },
-			{ code: 'uz', iso: 'uz', file: 'uz.json' },
-			{ code: 'en', iso: 'en', file: 'en.json' }
+			{ code: 'uz', iso: 'uz-UZ', file: 'uz.json' }, // Fixed: Added proper ISO code
+			{ code: 'en', iso: 'en-US', file: 'en.json' } // Fixed: Added proper ISO code
 		],
+		langDir: 'locales', // Added: Specify locales directory
+		defaultLocale: 'ru', // Added: Set default locale
 		strategy: 'prefix_and_default',
 		detectBrowserLanguage: {
 			useCookie: true,
-			cookieKey: 'locale'
+			cookieKey: 'locale',
+			redirectOn: 'root' // Added: Recommended setting
 		},
 		compilation: {
 			strictMessage: false

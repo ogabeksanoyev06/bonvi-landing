@@ -11,6 +11,11 @@ const menuItems = [
 
 const isMenuOpen = ref(false)
 const isSticky = ref(false)
+const isContactModalOpen = ref(false)
+
+const openContactModal = () => {
+	isContactModalOpen.value = true
+}
 
 const handleScroll = () => {
 	isSticky.value = window.scrollY > 50
@@ -80,7 +85,7 @@ const toggleMenu = () => {
 					<CountrySelect />
 				</div>
 				<div class="transition-all duration-300 hover:scale-105">
-					<BaseMainButton :text="$t('contact')" icon="/images/call.svg" />
+					<BaseMainButton :text="$t('contact')" icon="/images/call.svg" @click="openContactModal" />
 				</div>
 			</div>
 
@@ -111,6 +116,8 @@ const toggleMenu = () => {
 			</button>
 		</div>
 	</header>
+
+	<BaseContactModal v-model="isContactModalOpen" />
 
 	<!-- Mobile Menu -->
 	<Transition
@@ -145,7 +152,7 @@ const toggleMenu = () => {
 				}"
 			>
 				<CountrySelect />
-				<BaseMainButton :text="$t('contact')" icon="/images/call.svg" />
+				<BaseMainButton :text="$t('contact')" icon="/images/call.svg" @click="openContactModal" />
 			</div>
 		</div>
 	</Transition>

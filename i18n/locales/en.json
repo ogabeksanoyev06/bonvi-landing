@@ -19,5 +19,15 @@
     "contact_us": "Contact Us",
     "privacy_policy": "Privacy Policy",
     "terms_conditions": "Terms & Conditions",
-    "developed_by": "Developed by"
+    "developed_by": "Developed by",
+    "modal_title": "Leave your information for partnership, we will contact you soon.",
+    "input_name": "Full Name",
+    "input_name_placeholder": "Enter your full name",
+    "input_phone": "Phone Number",
+    "input_email": "Email Address",
+    "input_email_placeholder": "Enter your email address",
+    "submit_btn": "Submit",
+    "validation_name": "Name is required",
+    "validation_phone": "Phone number is required",
+    "validation_email": "Invalid email format"
 }
