@@ -1,6 +1,6 @@
 <template>
-	<section id="why" ref="sectionRef" class="md:container pt-16 sm:pt-24">
-		<div>
+	<section id="why" ref="sectionRef" class="max-w-[1440px] mx-auto lg:p-10 pt-16 sm:pt-24">
+		<div class="">
 			<WhyAdamCard />
 		</div>
 	</section>

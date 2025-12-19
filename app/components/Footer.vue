@@ -1,5 +1,5 @@
 <template>
-	<footer class="md:container pt-12 md:pb-12">
+	<footer class="max-w-[1440px] mx-auto lg:p-10 pt-12 md:pb-12">
 		<div class="bg-[#E2EEF9] md:rounded-[48px] overflow-hidden relative z-10">
 			<NuxtImg src="/images/footer-bg.webp" alt="checkflower icon" class="absolute left-0 bottom-[-67px] h-[350px] min-w-[1360px] z-[-1]" />
 			<div class="hidden min-[1220px]:flex justify-between gap-5 py-8 px-12">

@@ -3,9 +3,9 @@
 </script>
 
 <template>
-	<section id="hero" class="container min-h-screen p-4 sm:p-6 md:p-8 lg:p-10">
+	<section id="hero" class="max-w-[1440px] mx-auto lg:p-10">
 		<div
-			class="relative bg-dark w-full h-full min-h-[calc(100vh-32px)] sm:min-h-[calc(100vh-48px)] md:min-h-[calc(100vh-64px)] lg:min-h-[calc(100vh-80px)] p-3 md:p-6 overflow-hidden rounded-[50px] flex flex-col"
+			class="relative bg-dark w-full h-full min-h-screen lg:min-h-[calc(100vh-80px)] p-3 md:p-6 overflow-hidden lg:rounded-[50px] flex flex-col"
 		>
 			<BaseHeader />
 
@@ -20,14 +20,15 @@
 						</p>
 
 						<div class="mt-4 flex justify-center flex-col sm:flex-row gap-2 md:gap-4 lg:justify-start">
-							<BaseMainButton :text="$t('products')" icon="/images/products-icon.svg" />
-
-							<button class="glass-border px-4 py-3 justify-center rounded-full flex items-center gap-3">
+							<a href="#products">
+								<BaseMainButton :text="$t('products')" icon="/images/products-icon.svg" />
+							</a>
+							<a href="#why" class="glass-border px-4 py-3 justify-center rounded-full flex items-center gap-3">
 								<span class="text-white text-sm font-semibold leading-140 font-adero-trial">
 									{{ $t('why_us') }}
 								</span>
 								<NuxtImg src="/images/arrow-right-icon.svg" class="size-6 aspect-square" />
-							</button>
+							</a>
 						</div>
 					</div>
 
