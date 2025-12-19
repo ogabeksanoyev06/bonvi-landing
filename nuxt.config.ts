@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 			{ code: 'uz', iso: 'uz', file: 'uz.json' },
 			{ code: 'en', iso: 'en', file: 'en.json' }
 		],
-		strategy: 'prefix_and_default',
+		strategy: 'prefix_except_default',
 		detectBrowserLanguage: {
 			useCookie: true,
 			cookieKey: 'locale'

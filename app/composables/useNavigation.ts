@@ -1,34 +1,34 @@
 export const useNavigation = () => {
-  const route = useRoute();
-  const router = useRouter();
+	const route = useRoute()
+	const router = useRouter()
 
-  const scrollToSection = (sectionId: string) => {
-    if (route.path !== "/") {
-      router.push(`/#${sectionId}`);
-      return;
-    }
+	const scrollToSection = (sectionId: string) => {
+		if (route.path !== '/') {
+			router.push(`/#${sectionId}`)
+			return
+		}
 
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 80;
-      const elementPosition = element.offsetTop - headerHeight;
+		const element = document.getElementById(sectionId)
+		if (element) {
+			const headerHeight = 80
+			const elementPosition = element.offsetTop - headerHeight
 
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth",
-      });
-    }
-  };
+			window.scrollTo({
+				top: elementPosition,
+				behavior: 'smooth'
+			})
+		}
+	}
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		})
+	}
 
-  return {
-    scrollToSection,
-    scrollToTop,
-  };
-};
+	return {
+		scrollToSection,
+		scrollToTop
+	}
+}

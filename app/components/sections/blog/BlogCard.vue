@@ -1,7 +1,7 @@
 <template>
 	<div class="relative z-10 overflow-hidden rounded-3xl md:rounded-[48px] p-4 md:p-8 lg:p-10 min-h-[300px] md:min-h-[400px] flex flex-col items-start bg-orange-600">
 		<img src="/images/1.png" :alt="title" class="absolute inset-0 w-full h-full object-cover z-[-1] pointer-events-none" />
-		
+
 		<h3 class="text-2xl md:text-4xl lg:text-5xl font-bold !leading-130 text-white whitespace-pre-line font-adero-trial mb-7">{{ title }}</h3>
 
 		<div class="flex flex-col gap-3">
@@ -18,8 +18,8 @@
 <script setup lang="ts">
 defineProps<{
 	title: string
-	price: string
-	oldPrice: string
+	price: number
+	oldPrice: number
 	description: string
 	image: string
 }>()

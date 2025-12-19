@@ -54,13 +54,13 @@
 						</li>
 
 						<li>
-							<button class="text-left transition-300 hover:text-blue" @click="handleNavigation('advantages')">
+							<button class="text-left transition-300 hover:text-blue" @click="handleNavigation('benefits')">
 								{{ $t('advantages') }}
 							</button>
 						</li>
 
 						<li>
-							<button class="text-left transition-300 hover:text-blue" @click="handleNavigation('why_bonvi')">
+							<button class="text-left transition-300 hover:text-blue" @click="handleNavigation('why')">
 								{{ $t('why_bonvi') }}
 							</button>
 						</li>
@@ -162,13 +162,13 @@
 						</button>
 						<button
 							class="flex items-center justify-center py-3 px-4 bg-white/40 backdrop-blur-sm rounded-xl font-medium text-gray-800 hover:bg-white/60 hover:text-[#12C09E] active:bg-white/70 transition-all duration-200 min-h-[44px]"
-							@click="handleNavigation('patients')"
+							@click="handleNavigation('why')"
 						>
 							{{ $t('why_bonvi') }}
 						</button>
 						<button
 							class="flex items-center justify-center py-3 px-4 bg-white/40 backdrop-blur-sm rounded-xl font-medium text-gray-800 hover:bg-white/60 hover:text-[#12C09E] active:bg-white/70 transition-all duration-200 min-h-[44px]"
-							@click="handleNavigation('patients')"
+							@click="handleNavigation('faq')"
 						>
 							{{ $t('faq') }}
 						</button>
