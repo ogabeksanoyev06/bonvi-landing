@@ -20,8 +20,7 @@ export default defineNuxtConfig({
 			{ code: 'uz', iso: 'uz-UZ', file: 'uz.json' }, // Fixed: Added proper ISO code
 			{ code: 'en', iso: 'en-US', file: 'en.json' } // Fixed: Added proper ISO code
 		],
-		langDir: 'locales', // Added: Specify locales directory
-		strategy: 'prefix_and_default',
+		strategy: 'prefix_except_default',
 		detectBrowserLanguage: {
 			useCookie: true,
 			cookieKey: 'locale',
