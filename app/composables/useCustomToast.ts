@@ -4,7 +4,7 @@ export const useCustomToast = () => {
     type: "success" | "error" | "warning" | "info"
   ) => {
     const toast = document.createElement("div");
-    toast.className = `fixed top-4 right-4 z-[999] px-6 py-4 rounded-lg shadow-lg text-white font-medium max-w-sm transition-all duration-300 transform translate-x-full`;
+    toast.className = `fixed top-4 z-[999] right-4 px-6 py-4 rounded-lg shadow-lg text-white font-medium max-w-sm transition-all duration-300`;
 
     switch (type) {
       case "success":

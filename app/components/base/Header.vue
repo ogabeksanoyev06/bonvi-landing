@@ -6,7 +6,6 @@ import FormModal from '~/components/sections/form/FormModal.vue'
 const isOpen = ref(false)
 const isMenuOpen = ref(false)
 const isSticky = ref(false)
-const isContactModalOpen = ref(false)
 const headerHeight = ref(0) // <-- new
 
 const menuItems = [
@@ -16,15 +15,10 @@ const menuItems = [
 	{ label: 'faq', href: '#faq' }
 ]
 
-const openContactModal = () => {
-	isContactModalOpen.value = true
-}
-
 const handleScroll = () => {
 	isSticky.value = window.scrollY > 50
 }
 
-// Measure header height once mounted
 const measureHeaderHeight = () => {
 	nextTick(() => {
 		const headerEl = document.querySelector('header')
@@ -37,7 +31,7 @@ const measureHeaderHeight = () => {
 onMounted(() => {
 	window.addEventListener('scroll', handleScroll)
 	measureHeaderHeight()
-	window.addEventListener('resize', measureHeaderHeight) // handle resize
+	window.addEventListener('resize', measureHeaderHeight)
 })
 
 onUnmounted(() => {
@@ -56,16 +50,13 @@ const toggleMenu = () => {
 		:class="[
 			'z-50 transition-all duration-300',
 			isSticky
-				? '!fixed top-0 left-0 w-full rounded-none !bg-dark/95 backdrop-blur-lg py-3 px-6 shadow-2xl'
+				? 'fixed! top-0 left-0 w-full rounded-none bg-dark/95! backdrop-blur-lg py-3 px-6 shadow-2xl'
 				: 'relative glass-border p-2 pr-6 lg:px-6 lg:py-4 rounded-full backdrop-blur-sm'
 		]"
 	>
 		<!-- Header content remains unchanged -->
 		<div class="max-w-7xl mx-auto flex justify-between items-center">
-			<nav 
-				class="flex items-center w-max gap-10 rounded-full"
-				:class="isSticky ? 'px-0 py-0' : 'glass-border px-2 py-2 lg:px-6 lg:py-4'"
-			>
+			<nav class="flex items-center w-max gap-10 rounded-full" :class="isSticky ? 'px-0 py-0' : 'max-md:glass-border !border-none px-2 py-2 lg:px-6 lg:py-4'">
 				<a href="#hero" class="z-50">
 					<img
 						:class="[isSticky ? 'w-16 lg:w-20 mx-2 my-1' : 'max-lg:w-20 max-lg:mx-4 max-lg:my-2', isSticky ? 'scale-95' : 'scale-100']"
@@ -101,6 +92,10 @@ const toggleMenu = () => {
 					</div>
 				</div>
 
+				<div class="lg:hidden">
+					<CountrySelect />
+				</div>
+
 				<button @click="toggleMenu" class="lg:hidden text-white z-50 focus:outline-none transition-all duration-300 hover:scale-110 active:scale-95">
 					<svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -111,20 +106,12 @@ const toggleMenu = () => {
 				</button>
 			</div>
 		</div>
-
-		<FormModal v-model="isOpen" @close="isOpen = false" />
 	</header>
 
-	<!-- 👇 Spacer to prevent layout jump -->
-	<div
-		v-if="isSticky"
-		:style="{ height: headerHeight + 'px' }"
-		aria-hidden="true"
-	></div>
+	<div v-if="isSticky" :style="{ height: headerHeight + 'px' }" aria-hidden="true"></div>
 
-	<BaseContactModal v-model="isContactModalOpen" />
+	<FormModal v-model="isOpen" @close="isOpen = false" />
 
-	<!-- Mobile Menu (unchanged) -->
 	<Transition
 		enter-active-class="transition-all duration-500 ease-out"
 		leave-active-class="transition-all duration-400 ease-in"
@@ -153,15 +140,13 @@ const toggleMenu = () => {
 					animation: isMenuOpen ? 'slideIn 0.5s ease-out 0.4s both' : 'none'
 				}"
 			>
-				<CountrySelect />
-				<BaseMainButton :text="$t('contact')" icon="/images/call.svg" @click="openContactModal" />
+				<BaseMainButton :text="$t('contact')" icon="/images/call.svg" @click="isOpen = true" />
 			</div>
 		</div>
 	</Transition>
 </template>
 
 <style scoped>
-/* Keep your existing styles */
 @keyframes slideIn {
 	from {
 		opacity: 0;
@@ -175,7 +160,6 @@ const toggleMenu = () => {
 
 header {
 	will-change: transform, background-color, border-radius;
-	/* Optional: add smooth transition for all properties */
 	transition: all 0.3s ease;
 }
 
